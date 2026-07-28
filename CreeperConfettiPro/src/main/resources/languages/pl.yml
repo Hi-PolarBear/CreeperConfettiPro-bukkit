@@ -1,0 +1,28 @@
+# CreeperConfettiPro - Polski
+# Ten plik zawiera wszystkie wiadomości w grze. Komunikaty startowe konsoli są zapisane na stałe i nie mogą być zmienione.
+# Kody kolorów: Używaj & zamiast § (np. &a dla zielonego, &c dla czerwonego)
+
+command:
+  no_permission: "&cNie masz uprawnień do użycia tego polecenia!"
+  usage: "&cUżycie: /creeperconfetti <reload | reseteffect | seteffect | reloadlanguage | setlanguage | language>"
+  reload_success: "&aKonfiguracja CreeperConfettiPro została ponownie załadowana!"
+  reset_success: "&aPrzywrócono domyślny efekt konfetti!"
+  player_only: "&cTylko gracze mogą używać tego polecenia!"
+  hold_firework: "&cProszę trzymać rakietę fajerwerkową z pożądanymi efektami w głównej ręce."
+  effect_set: "&aEfekt konfetti jest teraz ustawiony na fajerwerki w twojej głównej ręce!"
+  language_set: "&aJęzyk wtyczki został ustawiony na: "
+  invalid_language: "&cNieprawidłowy kod języka! Dostępne: zh, zht, ja, fr, ru, ko, en, es, de, it, pt, ar, hi, tr, nl, pl, sv, th"
+  current_language: "&eAktualny język wtyczki: "
+  language_reloaded: "&aUstawienia języka zostały ponownie załadowane! Aktualny język: "
+  reloading: "&ePonowne wykrywanie ustawień języka..."
+  set_language_usage: "&cUżycie: /creeperconfetti setlanguage <kod_języka>"
+  available_languages: "&7Dostępne kody języków: zh(chiński uproszczony), zht(chiński tradycyjny), ja(japoński), fr(francuski), ru(rosyjski), ko(koreański), en(angielski), es(hiszpański), de(niemiecki), it(włoski), pt(Portugalski), ar(arabski), hi(hindi), tr(turecki), nl(niderlandzki), pl(polski), sv(szwedzki), th(tajski)"
+
+help:
+  header: "&6=== Pomoc CreeperConfettiPro ==="
+  reload: "&e/reload &7- Przeładuj konfigurację wtyczki"
+  reseteffect: "&e/reseteffect &7- Przywróć domyślny efekt konfetti"
+  seteffect: "&e/seteffect &7- Ustaw fajerwerki w głównej ręce jako efekt konfetti"
+  reloadlanguage: "&e/reloadlanguage &7- Ponownie wykryj ustawienia języka"
+  setlanguage: "&e/setlanguage <kod> &7- Ustaw język wtyczki"
+  language: "&e/language &7- Zobacz aktualny język wtyczki"

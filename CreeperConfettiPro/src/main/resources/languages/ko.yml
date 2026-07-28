@@ -1,0 +1,28 @@
+# CreeperConfettiPro - 한국어
+# 이 파일에는 모든 게임 내 메시지가 포함되어 있습니다. 콘솔 시작 메시지는 하드코딩되어 변경할 수 없습니다.
+# 색상 코드: § 대신 & 사용 (예: &a는 녹색, &c는 빨간색)
+
+command:
+  no_permission: "&c이 명령어를 사용할 권한이 없습니다!"
+  usage: "&c사용법: /creeperconfetti <reload | reseteffect | seteffect | reloadlanguage | setlanguage | language>"
+  reload_success: "&aCreeperConfettiPro 설정이 다시 로드되었습니다!"
+  reset_success: "&a기본 컨페티 효과가 복원되었습니다!"
+  player_only: "&c플레이어만 이 명령어를 사용할 수 있습니다!"
+  hold_firework: "&c주요 손에 원하는 효과가 있는 폭죽 로켓을 장착해 주세요."
+  effect_set: "&a컨페티 효과가 주요 손의 폭죽으로 설정되었습니다!"
+  language_set: "&a플러그인 언어가 설정되었습니다: "
+  invalid_language: "&c잘못된 언어 코드입니다! 사용 가능: zh, zht, ja, fr, ru, ko, en, es, de, it, pt, ar, hi, tr, nl, pl, sv, th"
+  current_language: "&e현재 플러그인 언어: "
+  language_reloaded: "&a언어 설정이 다시 로드되었습니다! 현재 언어: "
+  reloading: "&e언어 설정을 다시 감지하는 중..."
+  set_language_usage: "&c사용법: /creeperconfetti setlanguage <언어_코드>"
+  available_languages: "&7사용 가능한 언어 코드: zh(중국어 간체), zht(중국어 번체), ja(일본어), fr(프랑스어), ru(러시아어), ko(한국어), en(영어), es(스페인어), de(독일어), it(이탈리아어), pt(포르투갈어), ar(아랍어), hi(힌디어), tr(터키어), nl(네덜란드어), pl(폴란드어), sv(스웨덴어), th(태국어)"
+
+help:
+  header: "&6=== CreeperConfettiPro 도움말 ==="
+  reload: "&e/reload &7- 플러그인 설정 다시 로드"
+  reseteffect: "&e/reseteffect &7- 기본 컨페티 효과 복원"
+  seteffect: "&e/seteffect &7- 주요 손의 폭죽을 컨페티 효과로 설정"
+  reloadlanguage: "&e/reloadlanguage &7- 언어 설정 다시 감지"
+  setlanguage: "&e/setlanguage <코드> &7- 플러그인 언어 설정"
+  language: "&e/language &7- 현재 플러그인 언어 보기"
