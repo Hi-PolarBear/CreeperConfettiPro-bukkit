@@ -1,0 +1,17 @@
+main: creeperconfetti.CreeperConfettiPro
+name: CreeperConfettiPro
+author: Hi_PolarBear
+version: 2.2.0-folia
+api-version: 1.21
+
+commands:
+  creeperconfetti:
+    description: CreeperConfettiPro main command
+    usage: /creeperconfetti <reload | reseteffect | seteffect | reloadlanguage | setlanguage | language | help>
+    permission: creeperconfetti.command
+    aliases: [cc, confetti]
+
+permissions:
+  creeperconfetti.command:
+    description: Allows using CreeperConfettiPro commands
+    default: op

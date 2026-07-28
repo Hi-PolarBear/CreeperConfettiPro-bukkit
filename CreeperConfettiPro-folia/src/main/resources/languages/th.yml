@@ -1,0 +1,28 @@
+# CreeperConfettiPro - ไทย
+# ไฟล์นี้มีข้อความในเกมทั้งหมด ข้อความเริ่มต้นของคอนโซลถูกเข้ารหัสไว้และไม่สามารถเปลี่ยนแปลงได้
+# รหัสสี: ใช้ & แทน § (เช่น &a สำหรับสีเขียว, &c สำหรับสีแดง)
+
+command:
+  no_permission: "&cคุณไม่มีสิทธิ์ในการใช้คำสั่งนี้!"
+  usage: "&cการใช้งาน: /creeperconfetti <reload | reseteffect | seteffect | reloadlanguage | setlanguage | language>"
+  reload_success: "&aโหลดการกำหนดค่า CreeperConfettiPro ใหม่แล้ว!"
+  reset_success: "&aกู้คืนเอฟเฟกต์คอนเฟตตี้เริ่มต้นแล้ว!"
+  player_only: "&cเฉพาะผู้เล่นเท่านั้นที่สามารถใช้คำสั่งนี้ได้!"
+  hold_firework: "&cโปรดถือดอกไม้ไฟที่มีเอฟเฟกต์ที่ต้องการในมือหลักของคุณ"
+  effect_set: "&aเอฟเฟกต์คอนเฟตตี้ได้รับการตั้งค่าเป็นดอกไม้ไฟในมือหลักของคุณแล้ว!"
+  language_set: "&aตั้งค่าภาษาปลั๊กอินเป็น: "
+  invalid_language: "&cรหัสภาษาไม่ถูกต้อง! ตัวเลือกที่มี: zh, zht, ja, fr, ru, ko, en, es, de, it, pt, ar, hi, tr, nl, pl, sv, th"
+  current_language: "&eภาษาปลั๊กอินปัจจุบัน: "
+  language_reloaded: "&aโหลดการตั้งค่าภาษาใหม่แล้ว! ภาษาปัจจุบัน: "
+  reloading: "&eกำลังตรวจพบการตั้งค่าภาษาใหม่..."
+  set_language_usage: "&cการใช้งาน: /creeperconfetti setlanguage <รหัส_ภาษา>"
+  available_languages: "&7รหัสภาษาที่มี: zh(จีนตัวย่อ), zht(จีนตัวเต็ม), ja(ญี่ปุ่น), fr(ฝรั่งเศส), ru(รัสเซีย), ko(เกาหลี), en(อังกฤษ), es(สเปน), de(เยอรมัน), it(อิตาลี), pt(โปรตุเกส), ar(อาหรับ), hi(ฮินดี), tr(ตุรกี), nl(ดัตช์), pl(โปแลนด์), sv(สวีเดน), th(ไทย)"
+
+help:
+  header: "&6=== ความช่วยเหลือ CreeperConfettiPro ==="
+  reload: "&e/reload &7- โหลดการกำหนดค่าปลั๊กอินใหม่"
+  reseteffect: "&e/reseteffect &7- กู้คืนเอฟเฟกต์คอนเฟตตี้เริ่มต้น"
+  seteffect: "&e/seteffect &7- ตั้งค่าดอกไม้ไฟในมือหลักเป็นเอฟเฟกต์คอนเฟตตี้"
+  reloadlanguage: "&e/reloadlanguage &7- ตรวจพบการตั้งค่าภาษาใหม่"
+  setlanguage: "&e/setlanguage <รหัส> &7- ตั้งค่าภาษาปลั๊กอิน"
+  language: "&e/language &7- ดูภาษาปลั๊กอินปัจจุบัน"

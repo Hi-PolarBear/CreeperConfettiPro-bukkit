@@ -1,0 +1,28 @@
+# CreeperConfettiPro - Nederlands
+# Dit bestand bevat alle berichten in het spel. Console-startberichten zijn hardgecodeerd en kunnen niet worden gewijzigd.
+# Kleurcodes: Gebruik & in plaats van § (bv. &a voor groen, &c voor rood)
+
+command:
+  no_permission: "&cJe hebt geen toestemming om dit commando te gebruiken!"
+  usage: "&cGebruik: /creeperconfetti <reload | reseteffect | seteffect | reloadlanguage | setlanguage | language>"
+  reload_success: "&aCreeperConfettiPro configuratie herladen!"
+  reset_success: "&aStandaard confetti-effect hersteld!"
+  player_only: "&cAlleen spelers kunnen dit commando gebruiken!"
+  hold_firework: "&cHoud alstublieft een vuurwerk raket met de gewenste effecten in je hoofdhand."
+  effect_set: "&aConfetti-effect is nu ingesteld op het vuurwerk in je hoofdhand!"
+  language_set: "&aPlugin-taal ingesteld op: "
+  invalid_language: "&cOngeldige taalcode! Beschikbaar: zh, zht, ja, fr, ru, ko, en, es, de, it, pt, ar, hi, tr, nl, pl, sv, th"
+  current_language: "&eHuidige plugin-taal: "
+  language_reloaded: "&aTaalinstellingen herladen! Huidige taal: "
+  reloading: "&eTaalinstellingen opnieuw detecteren..."
+  set_language_usage: "&cGebruik: /creeperconfetti setlanguage <taalcode>"
+  available_languages: "&7Beschikbare taalcodes: zh(Vereenvoudigd Chinees), zht(Traditioneel Chinees), ja(Japans), fr(Frans), ru(Russisch), ko(Koreaans), en(Engels), es(Spaans), de(Duits), italiaans(it), pt(Portugees), ar(Arabisch), hi(Hindi), tr(Turks), nl(Nederlands), pl(Pools), sv(Zweeds), th(Thais)"
+
+help:
+  header: "&6=== CreeperConfettiPro Hulp ==="
+  reload: "&e/reload &7- Plugin-configuratie herladen"
+  reseteffect: "&e/reseteffect &7- Standaard confetti-effect herstellen"
+  seteffect: "&e/seteffect &7- Vuurwerk in hoofdhand instellen als confetti-effect"
+  reloadlanguage: "&e/reloadlanguage &7- Taalinstellingen opnieuw detecteren"
+  setlanguage: "&e/setlanguage <code> &7- Plugin-taal instellen"
+  language: "&e/language &7- Bekijk huidige plugin-taal"

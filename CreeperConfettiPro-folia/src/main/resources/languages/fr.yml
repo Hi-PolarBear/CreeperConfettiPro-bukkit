@@ -1,0 +1,28 @@
+# CreeperConfettiPro - Français
+# Ce fichier contient tous les messages du jeu. Les messages de démarrage de la console sont codés en dur et ne peuvent pas être modifiés.
+# Codes couleur: Utilisez & au lieu de § (ex: &a pour vert, &c pour rouge)
+
+command:
+  no_permission: "&cVous n'avez pas la permission d'utiliser cette commande !"
+  usage: "&cUtilisation: /creeperconfetti <reload | reseteffect | seteffect | reloadlanguage | setlanguage | language>"
+  reload_success: "&aConfiguration de CreeperConfettiPro rechargée !"
+  reset_success: "&aEffet confetti par défaut restauré !"
+  player_only: "&cSeuls les joueurs peuvent utiliser cette commande !"
+  hold_firework: "&cVeuillez tenir un feu d'artifice avec les effets souhaités dans votre main principale."
+  effect_set: "&aL'effet confetti est maintenant défini sur le feu d'artifice dans votre main principale !"
+  language_set: "&aLa langue du plugin est définie sur: "
+  invalid_language: "&cCode de langue invalide ! Disponibles: zh, zht, ja, fr, ru, ko, en, es, de, it, pt, ar, hi, tr, nl, pl, sv, th"
+  current_language: "&eLangue actuelle du plugin: "
+  language_reloaded: "&aParamètres de langue rechargés ! Langue actuelle: "
+  reloading: "&eRedétection des paramètres de langue..."
+  set_language_usage: "&cUtilisation: /creeperconfetti setlanguage <code_de_langue>"
+  available_languages: "&7Codes de langue disponibles: zh(chinois simplifié), zht(chinois traditionnel), ja(japonais), fr(français), ru(russe), ko(coréen), en(anglais), es(espagnol), de(allemand), it(italien), pt(portugais), ar(arabe), hi(hindi), tr(turc), nl(néerlandais), pl(polonais), sv(suédois), th(thaï)"
+
+help:
+  header: "&6=== Aide CreeperConfettiPro ==="
+  reload: "&e/reload &7- Recharger la configuration du plugin"
+  reseteffect: "&e/reseteffect &7- Restaurer l'effet confetti par défaut"
+  seteffect: "&e/seteffect &7- Définir le feu d'artifice en main principale comme effet confetti"
+  reloadlanguage: "&e/reloadlanguage &7- Redétecter les paramètres de langue"
+  setlanguage: "&e/setlanguage <code> &7- Définir la langue du plugin"
+  language: "&e/language &7- Afficher la langue actuelle du plugin"
