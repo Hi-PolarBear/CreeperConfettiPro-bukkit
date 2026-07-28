@@ -1,0 +1,28 @@
+# CreeperConfettiPro - Türkçe
+# Bu dosya tüm oyun içi mesajları içerir. Konsol başlangıç mesajları sabit kodlanmıştır ve değiştirilemez.
+# Renk kodları: § yerine & kullanın (ör: &a yeşil, &c kırmızı)
+
+command:
+  no_permission: "&cBu komutu kullanma izniniz yok!"
+  usage: "&cKullanım: /creeperconfetti <reload | reseteffect | seteffect | reloadlanguage | setlanguage | language>"
+  reload_success: "&aCreeperConfettiPro yapılandırması yeniden yüklendi!"
+  reset_success: "&aVarsayılan konfeti efekti geri yüklendi!"
+  player_only: "&cSadece oyuncular bu komutu kullanabilir!"
+  hold_firework: "&cLütfen ana elinizde istediğiniz efektleri içeren bir havai fişek roketi tutun."
+  effect_set: "&aKonfeti efekti artık ana elinizdeki havai fişek roketine ayarlandı!"
+  language_set: "&aEklenti dili şu şekilde ayarlandı: "
+  invalid_language: "&cGeçersiz dil kodu! Mevcut: zh, zht, ja, fr, ru, ko, en, es, de, it, pt, ar, hi, tr, nl, pl, sv, th"
+  current_language: "&eMevcut eklenti dili: "
+  language_reloaded: "&aDil ayarları yeniden yüklendi! Mevcut dil: "
+  reloading: "&eDil ayarları yeniden algılanıyor..."
+  set_language_usage: "&cKullanım: /creeperconfetti setlanguage <dil_kodu>"
+  available_languages: "&7Mevcut dil kodları: zh(Basitleştirilmiş Çince), zht(Geleneksel Çince), ja(Japonca), fr(Fransızca), ru(Rusça), ko(Korece), en(İngilizce), es(İspanyolca), de(Almanca), it(İtalyanca), pt(Portekizce), ar(Arapça), hi(Hintçe), tr(Türkçe), nl(Felemenkçe), pl(Lehçe), sv(İsveççe), th(Tayca)"
+
+help:
+  header: "&6=== CreeperConfettiPro Yardım ==="
+  reload: "&e/reload &7- Eklenti yapılandırmasını yeniden yükle"
+  reseteffect: "&e/reseteffect &7- Varsayılan konfeti efektini geri yükle"
+  seteffect: "&e/seteffect &7- Ana eldeki havai fişek konfeti efekti olarak ayarla"
+  reloadlanguage: "&e/reloadlanguage &7- Dil ayarlarını yeniden algıla"
+  setlanguage: "&e/setlanguage <kod> &7- Eklenti dili ayarla"
+  language: "&e/language &7- Mevcut eklenti dilini görüntüle"

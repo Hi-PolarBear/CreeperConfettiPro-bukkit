@@ -1,0 +1,62 @@
+# CreeperConfettiPro Configuration
+# =================================
+
+# Creeper变成彩纸爬行者的概率百分比 / Probability percentage for creeper to become confetti creeper
+confetti_chance: 100
+
+# 插件语言设置 / Plugin language setting
+# 可选值 / Available values:
+#   auto    - 自动检测服务器地区自动匹配语言 / Auto-detect server region and match language
+#   zh      - 简体中文 / Simplified Chinese
+#   zht     - 繁體中文 / Traditional Chinese
+#   ja      - 日本語 / Japanese
+#   fr      - Français / French
+#   ru      - Русский / Russian
+#   ko      - 한국어 / Korean
+#   en      - English (Default)
+#   es      - Español / Spanish
+#   de      - Deutsch / German
+#   it      - Italiano / Italian
+#   pt      - Português / Portuguese
+#   ar      - العربية / Arabic
+#   hi      - हिन्दी / Hindi
+#   tr      - Türkçe / Turkish
+#   nl      - Nederlands / Dutch
+#   pl      - Polski / Polish
+#   sv      - Svenska / Swedish
+#   th      - ไทย / Thai
+language: auto
+
+# 语言文件说明 / Language File Information:
+# 语言文件位于服务器插件目录下的 languages/ 文件夹中
+# Language files are located in the languages/ folder of the server plugin directory
+# 每个语言都有对应的 .yml 文件，可以自由编辑
+# Each language has a corresponding .yml file that can be freely edited
+# 控制台启动消息为硬编码，无法通过语言文件修改
+# Console startup messages are hardcoded and cannot be changed via language files
+# 颜色代码使用 & 符号 (例如 &a 为绿色, &c 为红色)
+# Color codes use & symbol (e.g., &a for green, &c for red)
+
+confetti_effect:
+  # 烟花效果配置 / Firework effect configuration
+  - ==: Firework
+    # 是否闪烁 / Whether to flicker
+    flicker: true
+    # 是否有轨迹 / Whether there is a trail
+    trail: false
+    # 颜色列表 / Color list
+    colors:
+      - ==: Color
+        ALPHA: 255
+        RED: 255
+        BLUE: 0
+        GREEN: 0
+      - ==: Color
+        ALPHA: 255
+        RED: 255
+        BLUE: 0
+        GREEN: 255
+    # 渐变颜色列表 / Fade color list
+    fade-colors: []
+    # 烟花类型 (BALL-球形) / Firework type (BALL-spherical)
+    type: BALL

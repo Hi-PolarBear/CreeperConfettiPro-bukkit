@@ -1,0 +1,28 @@
+# CreeperConfettiPro - Português
+# Este arquivo contém todas as mensagens do jogo. Mensagens de inicialização do console são codificadas e não podem ser alteradas.
+# Códigos de cor: Use & em vez de § (ex: &a para verde, &c para vermelho)
+
+command:
+  no_permission: "&cVocê não tem permissão para usar este comando!"
+  usage: "&cUso: /creeperconfetti <reload | reseteffect | seteffect | reloadlanguage | setlanguage | language>"
+  reload_success: "&aConfiguração do CreeperConfettiPro recarregada!"
+  reset_success: "&aEfeito de confete padrão restaurado!"
+  player_only: "&cApenas jogadores podem usar este comando!"
+  hold_firework: "&cPor favor, segure um foguete de fogos de artifício com os efeitos desejados na sua mão principal."
+  effect_set: "&aO efeito de confete agora está definido para o foguete de fogos de artifício na sua mão principal!"
+  language_set: "&aIdioma do plugin definido para: "
+  invalid_language: "&cCódigo de idioma inválido! Disponíveis: zh, zht, ja, fr, ru, ko, en, es, de, it, pt, ar, hi, tr, nl, pl, sv, th"
+  current_language: "&eIdioma atual do plugin: "
+  language_reloaded: "&aConfigurações de idioma recarregadas! Idioma atual: "
+  reloading: "&eRedetectando configurações de idioma..."
+  set_language_usage: "&cUso: /creeperconfetti setlanguage <código_idioma>"
+  available_languages: "&7Códigos de idioma disponíveis: zh(chinês simplificado), zht(chinês tradicional), ja(japonês), fr(francês), russo(ru), ko(coreano), en(inglês), es(espanhol), de(alemão), it(italiano), pt(português), ar(árabe), hi(hindi), tr(turco), nl(holandês), pl(polonês), sv(sueco), th(tailandês)"
+
+help:
+  header: "&6=== Ajuda CreeperConfettiPro ==="
+  reload: "&e/reload &7- Recarregar configuração do plugin"
+  reseteffect: "&e/reseteffect &7- Restaurar efeito de confete padrão"
+  seteffect: "&e/seteffect &7- Definir fogos de artifício na mão principal como efeito de confete"
+  reloadlanguage: "&e/reloadlanguage &7- Redetectar configurações de idioma"
+  setlanguage: "&e/setlanguage <código> &7- Definir idioma do plugin"
+  language: "&e/language &7- Ver idioma atual do plugin"

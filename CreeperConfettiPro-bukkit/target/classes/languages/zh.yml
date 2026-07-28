@@ -1,0 +1,29 @@
+# CreeperConfettiPro - 简体中文语言文件
+# 本文件包含所有游戏内消息。控制台启动消息已硬编码，无法修改。
+# 颜色代码: 使用 & 代替 § (例如 &a 为绿色, &c 为红色)
+# 可用颜色: &0(黑色), &1(深蓝), &2(深绿), &3(深青), &4(深红), &5(深紫), &6(金色), &7(灰色), &8(深灰), &9(蓝色), &a(绿色), &b(青色), &c(红色), &d(浅紫), &e(黄色), &f(白色)
+
+command:
+  no_permission: "&c您没有权限使用此命令！"
+  usage: "&c用法: /creeperconfetti <reload | reseteffect | seteffect | reloadlanguage | setlanguage | language>"
+  reload_success: "&a已重新加载CreeperConfettiPro配置！"
+  reset_success: "&a已恢复默认彩带效果！"
+  player_only: "&c只有玩家可以使用此命令！"
+  hold_firework: "&c请在主手中装备带有期望效果的烟花火箭。"
+  effect_set: "&a彩带效果现在设置为您主手中的烟花效果！"
+  language_set: "&a插件语言已设置为: "
+  invalid_language: "&c无效的语言代码！可用选项: zh, zht, ja, fr, ru, ko, en, es, de, it, pt, ar, hi, tr, nl, pl, sv, th"
+  current_language: "&e当前插件语言: "
+  language_reloaded: "&a语言设置已重新加载！当前语言: "
+  reloading: "&e正在重新检测语言设置..."
+  set_language_usage: "&c用法: /creeperconfetti setlanguage <语言代码>"
+  available_languages: "&7可用语言代码: zh(简体中文), zht(繁体中文), ja(日语), fr(法语), ru(俄语), ko(韩语), en(英语), es(西班牙语), de(德语), it(意大利语), pt(葡萄牙语), ar(阿拉伯语), hi(印地语), tr(土耳其语), nl(荷兰语), pl(波兰语), sv(瑞典语), th(泰语)"
+
+help:
+  header: "&6=== CreeperConfettiPro 帮助 ==="
+  reload: "&e/reload &7- 重新加载插件配置"
+  reseteffect: "&e/reseteffect &7- 恢复默认彩带效果"
+  seteffect: "&e/seteffect &7- 设置主手中的烟花为彩带效果"
+  reloadlanguage: "&e/reloadlanguage &7- 重新检测语言设置"
+  setlanguage: "&e/setlanguage <代码> &7- 设置插件语言"
+  language: "&e/language &7- 查看当前插件语言"

@@ -1,0 +1,29 @@
+# CreeperConfettiPro - English Language File
+# This file contains all in-game messages. Console startup messages are hardcoded and cannot be changed.
+# Color codes: Use & instead of § (e.g., &a for green, &c for red)
+# Available colors: &0(black), &1(dark_blue), &2(dark_green), &3(dark_aqua), &4(dark_red), &5(dark_purple), &6(gold), &7(gray), &8(dark_gray), &9(blue), &a(green), &b(aqua), &c(red), &d(light_purple), &e(yellow), &f(white)
+
+command:
+  no_permission: "&cYou don't have permission to use this command!"
+  usage: "&cUsage: /creeperconfetti <reload | reseteffect | seteffect | reloadlanguage | setlanguage | language>"
+  reload_success: "&aCreeperConfettiPro configuration reloaded!"
+  reset_success: "&aDefault confetti effect restored!"
+  player_only: "&cOnly players can use this command!"
+  hold_firework: "&cPlease hold a firework rocket with desired effects in your main hand."
+  effect_set: "&aConfetti effect is now set to the firework in your main hand!"
+  language_set: "&aPlugin language set to: "
+  invalid_language: "&cInvalid language code! Available: zh, zht, ja, fr, ru, ko, en, es, de, it, pt, ar, hi, tr, nl, pl, sv, th"
+  current_language: "&eCurrent plugin language: "
+  language_reloaded: "&aLanguage settings reloaded! Current language: "
+  reloading: "&eRe-detecting language settings..."
+  set_language_usage: "&cUsage: /creeperconfetti setlanguage <language_code>"
+  available_languages: "&7Available language codes: zh(Simplified Chinese), zht(Traditional Chinese), ja(Japanese), fr(French), ru(Russian), ko(Korean), en(English), es(Spanish), de(German), it(Italian), pt(Portuguese), ar(Arabic), hi(Hindi), tr(Turkish), nl(Dutch), pl(Polish), sv(Swedish), th(Thai)"
+
+help:
+  header: "&6=== CreeperConfettiPro Help ==="
+  reload: "&e/reload &7- Reload plugin configuration"
+  reseteffect: "&e/reseteffect &7- Restore default confetti effect"
+  seteffect: "&e/seteffect &7- Set firework in main hand as confetti effect"
+  reloadlanguage: "&e/reloadlanguage &7- Re-detect language settings"
+  setlanguage: "&e/setlanguage <code> &7- Set plugin language"
+  language: "&e/language &7- View current plugin language"

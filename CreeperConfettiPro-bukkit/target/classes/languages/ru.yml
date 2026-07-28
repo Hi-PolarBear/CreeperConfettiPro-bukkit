@@ -1,0 +1,28 @@
+# CreeperConfettiPro - Русский
+# Этот файл содержит все сообщения игры. Сообщения запуска консоли заданы в коде и не могут быть изменены.
+# Цветовые коды: Используйте & вместо § (напр. &a для зеленого, &c для красного)
+
+command:
+  no_permission: "&cУ вас нет разрешения на использование этой команды!"
+  usage: "&cИспользование: /creeperconfetti <reload | reseteffect | seteffect | reloadlanguage | setlanguage | language>"
+  reload_success: "&aКонфигурация CreeperConfettiPro перезагружена!"
+  reset_success: "&aВосстановлен эффект конфетти по умолчанию!"
+  player_only: "&cТолько игроки могут использовать эту команду!"
+  hold_firework: "&cПожалуйста, держите фейерверк с желаемыми эффектами в основной руке."
+  effect_set: "&aЭффект конфетти теперь установлен на фейерверк в вашей основной руке!"
+  language_set: "&aЯзык плагина установлен на: "
+  invalid_language: "&cНеверный код языка! Доступно: zh, zht, ja, fr, ru, ko, en, es, de, it, pt, ar, hi, tr, nl, pl, sv, th"
+  current_language: "&eТекущий язык плагина: "
+  language_reloaded: "&aНастройки языка перезагружены! Текущий язык: "
+  reloading: "&eПереопределение настроек языка..."
+  set_language_usage: "&cИспользование: /creeperconfetti setlanguage <код_языка>"
+  available_languages: "&7Доступные коды языков: zh(упрощенный китайский), zht(традиционный китайский), ja(японский), fr(французский), ru(русский), ko(корейский), en(английский), es(испанский), de(немецкий), it(итальянский), pt(португальский), ar(арабский), hi(хинди), tr(турецкий), nl(голландский), pl(польский), sv(шведский), th(тайский)"
+
+help:
+  header: "&6=== Помощь CreeperConfettiPro ==="
+  reload: "&e/reload &7- Перезагрузить конфигурацию плагина"
+  reseteffect: "&e/reseteffect &7- Восстановить эффект конфетти по умолчанию"
+  seteffect: "&e/seteffect &7- Установить фейерверк в основной руке как эффект конфетти"
+  reloadlanguage: "&e/reloadlanguage &7- Переопределить настройки языка"
+  setlanguage: "&e/setlanguage <код> &7- Установить язык плагина"
+  language: "&e/language &7- Показать текущий язык плагина"

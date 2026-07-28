@@ -1,0 +1,28 @@
+# CreeperConfettiPro - हिन्दी
+# इस फ़ाइल में सभी इन-गेम संदेश हैं। कंसोल स्टार्टअप संदेश हार्डकोड हैं और बदले नहीं जा सकते।
+# रंग कोड: § के बजाय & उपयोग करें (उदा: &a हरे के लिए, &c लाल के लिए)
+
+command:
+  no_permission: "&cआपके पास इस आदेश का उपयोग करने की अनुमति नहीं है!"
+  usage: "&cउपयोग: /creeperconfetti <reload | reseteffect | seteffect | reloadlanguage | setlanguage | language>"
+  reload_success: "&aCreeperConfettiPro विन्यास पुनः लोड किया गया!"
+  reset_success: "&aडिफ़ॉल्ट कॉन्फेटी प्रभाव पुनर्स्थापित किया गया!"
+  player_only: "&cकेवल खिलाड़ी ही इस आदेश का उपयोग कर सकते हैं!"
+  hold_firework: "&cकृपया अपने मुख्य हाथ में वांछित प्रभावों वाला फायरवर्क रॉकेट धारण करें।"
+  effect_set: "&aकॉन्फेटी प्रभाव अब आपके मुख्य हाथ में फायरवर्क पर सेट है!"
+  language_set: "&aप्लगइन भाषा सेट की गई: "
+  invalid_language: "&cअमान्य भाषा कोड! उपलब्ध: zh, zht, ja, fr, ru, ko, en, es, de, it, pt, ar, hi, tr, nl, pl, sv, th"
+  current_language: "&eवर्तमान प्लगइन भाषा: "
+  language_reloaded: "&aभाषा सेटिंग्स पुनः लोड की गई! वर्तमान भाषा: "
+  reloading: "&eभाषा सेटिंग्स का पुनः पता लगाया जा रहा है..."
+  set_language_usage: "&cउपयोग: /creeperconfetti setlanguage <भाषा_कोड>"
+  available_languages: "&7उपलब्ध भाषा कोड: zh(सरलीकृत चीनी), zht(पारंपरिक चीनी), ja(जापानी), fr(फ्रेंच), ru(रूसी), ko(कोरियाई), en(अंग्रेज़ी), es(स्पेनिश), de(जर्मन), it(इतालवी), pt(पुर्तगाली), ar(अरबी), hi(हिन्दी), tr(तुर्की), nl(डच), pl(पोलिश), sv(स्वीडिश), th(थाई)"
+
+help:
+  header: "&6=== CreeperConfettiPro सहायता ==="
+  reload: "&e/reload &7- प्लगइन विन्यास पुनः लोड करें"
+  reseteffect: "&e/reseteffect &7- डिफ़ॉल्ट कॉन्फेटी प्रभाव पुनर्स्थापित करें"
+  seteffect: "&e/seteffect &7- मुख्य हाथ में फायरवर्क को कॉन्फेटी प्रभाव के रूप में सेट करें"
+  reloadlanguage: "&e/reloadlanguage &7- भाषा सेटिंग्स का पुनः पता लगाएं"
+  setlanguage: "&e/setlanguage <कोड> &7- प्लगइन भाषा सेट करें"
+  language: "&e/language &7- वर्तमान प्लगइन भाषा देखें"

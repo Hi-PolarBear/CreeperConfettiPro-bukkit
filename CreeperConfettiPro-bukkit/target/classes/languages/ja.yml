@@ -1,0 +1,28 @@
+# CreeperConfettiPro - 日本語ファイル
+# このファイルにはゲーム内メッセージがすべて含まれています。コンソール起動メッセージはハードコードされており、変更できません。
+# カラーコード: § の代わりに & を使用 (例: &a は緑色, &c は赤色)
+
+command:
+  no_permission: "&cこのコマンドを使用する権限がありません！"
+  usage: "&c使用法: /creeperconfetti <reload | reseteffect | seteffect | reloadlanguage | setlanguage | language>"
+  reload_success: "&aCreeperConfettiProの設定を再読み込みしました！"
+  reset_success: "&aデフォルトの紙吹雪効果を復元しました！"
+  player_only: "&cプレイヤーのみがこのコマンドを使用できます！"
+  hold_firework: "&cメインハンドに希望の効果を持つ花火ロケットを装備してください。"
+  effect_set: "&a紙吹雪効果がメインハンドの花火に設定されました！"
+  language_set: "&aプラグイン言語が設定されました: "
+  invalid_language: "&c無効な言語コードです！利用可能: zh, zht, ja, fr, ru, ko, en, es, de, it, pt, ar, hi, tr, nl, pl, sv, th"
+  current_language: "&e現在のプラグイン言語: "
+  language_reloaded: "&a言語設定が再読み込みされました！現在の言語: "
+  reloading: "&e言語設定を再検出しています..."
+  set_language_usage: "&c使用法: /creeperconfetti setlanguage <言語コード>"
+  available_languages: "&7利用可能な言語コード: zh(簡体字中国語), zht(繁体字中国語), ja(日本語), fr(フランス語), ru(ロシア語), ko(韓国語), en(英語), es(スペイン語), de(ドイツ語), it(イタリア語), pt(ポルトガル語), ar(アラビア語), hi(ヒンディー語), tr(トルコ語), nl(オランダ語), pl(ポーランド語), sv(スウェーデン語), th(タイ語)"
+
+help:
+  header: "&6=== CreeperConfettiPro ヘルプ ==="
+  reload: "&e/reload &7- プラグイン設定を再読み込み"
+  reseteffect: "&e/reseteffect &7- デフォルトの紙吹雪効果を復元"
+  seteffect: "&e/seteffect &7- メインハンドの花火を紙吹雪効果に設定"
+  reloadlanguage: "&e/reloadlanguage &7- 言語設定を再検出"
+  setlanguage: "&e/setlanguage <コード> &7- プラグイン言語を設定"
+  language: "&e/language &7- 現在のプラグイン言語を表示"

@@ -1,0 +1,28 @@
+# CreeperConfettiPro - العربية
+# يحتوي هذا الملف على جميع رسائل اللعبة. رسائل بدء التشغيل في الكونسول مشفرة ولا يمكن تغييرها.
+# أكواد الألوان: استخدم & بدلاً من § (مثلاً: &a للأخضر، &c للأحمر)
+
+command:
+  no_permission: "&cليس لديك الصلاحية لاستخدام هذا الأمر!"
+  usage: "&cالاستخدام: /creeperconfetti <reload | reseteffect | seteffect | reloadlanguage | setlanguage | language>"
+  reload_success: "&aتم إعادة تحميل إعدادات CreeperConfettiPro!"
+  reset_success: "&aتم استعادة تأثير الورق الملون الافتراضي!"
+  player_only: "&cيمكن للاعبين فقط استخدام هذا الأمر!"
+  hold_firework: "&cيرجى حمل صاروخ ألعاب نارية بالتأثيرات المطلوبة في يدك الرئيسية."
+  effect_set: "&aتم تعيين تأثير الورق الملون الآن إلى صاروخ الألعاب النارية في يدك الرئيسية!"
+  language_set: "&aتم تعيين لغة الإضافة إلى: "
+  invalid_language: "&cرمز اللغة غير صالح! المتاحة: zh, zht, ja, fr, ru, ko, en, es, de, it, pt, ar, hi, tr, nl, pl, sv, th"
+  current_language: "&eلغة الإضافة الحالية: "
+  language_reloaded: "&aتم إعادة تحميل إعدادات اللغة! اللغة الحالية: "
+  reloading: "&eجاري إعادة اكتشاف إعدادات اللغة..."
+  set_language_usage: "&cالاستخدام: /creeperconfetti setlanguage <رمز_اللغة>"
+  available_languages: "&7رموز اللغة المتاحة: zh(الصينية المبسطة), zht(الصينية التقليدية), ja(اليابانية), fr(الفرنسية), ru(الروسية), ko(الكورية), en(الإنجليزية), es(الإسبانية), de(الألمانية), it(الإيطالية), pt(البرتغالية), ar(العربية), hi(الهندية), tr(التركية), nl(الهولندية), pl(البولندية), sv(السويدية), th(التايلاندية)"
+
+help:
+  header: "&6=== مساعدة CreeperConfettiPro ==="
+  reload: "&e/reload &7- إعادة تحميل إعدادات الإضافة"
+  reseteffect: "&e/reseteffect &7- استعادة تأثير الورق الملون الافتراضي"
+  seteffect: "&e/seteffect &7- تعيين الألعاب النارية في اليد الرئيسية كتأثير للورق الملون"
+  reloadlanguage: "&e/reloadlanguage &7- إعادة اكتشاف إعدادات اللغة"
+  setlanguage: "&e/setlanguage <رمز> &7- تعيين لغة الإضافة"
+  language: "&e/language &7- عرض اللغة الحالية للإضافة"

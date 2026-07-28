@@ -1,0 +1,28 @@
+# CreeperConfettiPro - Svenska
+# Den här filen innehåller alla meddelanden i spelet. Konsolstartmeddelanden är hårdkodade och kan inte ändras.
+# Färgkoder: Använd & istället för § (t.ex. &a för grön, &c för röd)
+
+command:
+  no_permission: "&cDu har inte behörighet att använda detta kommando!"
+  usage: "&cAnvändning: /creeperconfetti <reload | reseteffect | seteffect | reloadlanguage | setlanguage | language>"
+  reload_success: "&aCreeperConfettiPro-konfigurationen har laddats om!"
+  reset_success: "&aStandardkonfettieffekten har återställts!"
+  player_only: "&cEndast spelare kan använda detta kommando!"
+  hold_firework: "&cHåll en fyrverkeriraket med önskade effekter i din huvudhand."
+  effect_set: "&aKonfettieffekten är nu inställd på fyrverkeriet i din huvudhand!"
+  language_set: "&aPlugin-språket är inställt på: "
+  invalid_language: "&cOgiltig språkkod! Tillgängliga: zh, zht, ja, fr, ru, ko, en, es, de, it, pt, ar, hi, tr, nl, pl, sv, th"
+  current_language: "&eNuvarande plugin-språk: "
+  language_reloaded: "&aSpråkinställningarna har laddats om! Nuvarande språk: "
+  reloading: "&eSpråkinställningar upptäcks på nytt..."
+  set_language_usage: "&cAnvändning: /creeperconfetti setlanguage <språkkod>"
+  available_languages: "&7Tillgängliga språkkoder: zh(Förenklad kinesisk), zht(Traditionell kinesisk), ja(Japansk), fr(Fransk), ru(Rysk), ko(Koreansk), en(Engelsk), es(Spansk), de(Tysk), it(Italiensk), pt(Portugisisk), ar(Arabisk), hi(Hindi), tr(Turkisk), nl(Nederländsk), sv(Svensk), th(Thailändsk)"
+
+help:
+  header: "&6=== CreeperConfettiPro Hjälp ==="
+  reload: "&e/reload &7- Ladda om plugin-konfigurationen"
+  reseteffect: "&e/reseteffect &7- Återställ standardkonfettieffekt"
+  seteffect: "&e/seteffect &7- Ställ in fyrverkeri i huvudhand som konfettieffekt"
+  reloadlanguage: "&e/reloadlanguage &7- Upptäck språkinställningar på nytt"
+  setlanguage: "&e/setlanguage <kod> &7- Ställ in plugin-språk"
+  language: "&e/language &7- Visa nuvarande plugin-språk"
