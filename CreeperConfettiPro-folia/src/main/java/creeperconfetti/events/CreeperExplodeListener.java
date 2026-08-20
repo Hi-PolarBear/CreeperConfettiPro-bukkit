@@ -1,12 +1,9 @@
 package creeperconfetti.events;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
-import creeperconfetti.CreeperConfettiPro ;
+import creeperconfetti.CreeperConfettiPro;
 import io.papermc.paper.threadedregions.scheduler.ScheduledTask;
-import org.bukkit.FireworkEffect;
 import org.bukkit.Location;
 import org.bukkit.Sound;
 import org.bukkit.SoundCategory;
@@ -22,7 +19,6 @@ import org.bukkit.util.Vector;
 public class CreeperExplodeListener implements Listener {
 
     private static final String CONFETTI_CHANCE_CONFIG = "confetti_chance";
-    private static final String CONFETTI_EFFECTS_CONFIG = "confetti_effect";
 
     @EventHandler
     public void onCreeperExplode(EntityExplodeEvent event) {
@@ -45,20 +41,13 @@ public class CreeperExplodeListener implements Listener {
         Firework firework = creeper.getWorld().spawn(location, Firework.class);
 
         FireworkMeta fireworkMeta = firework.getFireworkMeta();
-        List<?> effects = (List<?>) CreeperConfettiPro.getInstance().getConfig().get(CONFETTI_EFFECTS_CONFIG);
-        if (effects != null && !effects.isEmpty()) {
-            List<FireworkEffect> fireworkEffects = new ArrayList<>();
-            for (Object effect : effects) {
-                if (effect instanceof FireworkEffect) {
-                    fireworkEffects.add((FireworkEffect) effect);
-                }
-            }
-            fireworkMeta.addEffects(fireworkEffects);
-        }
+        fireworkMeta.addEffects(CreeperConfettiPro.loadConfettiEffects());
         fireworkMeta.setPower(0);
         firework.setFireworkMeta(fireworkMeta);
 
         location.getWorld().playSound(location, Sound.ENTITY_GENERIC_EXPLODE, SoundCategory.HOSTILE, 2.0F, 1.0F);
+
+        creeper.remove();
 
         firework.getScheduler().runDelayed(CreeperConfettiPro.getInstance(), (ScheduledTask task) -> firework.detonate(), null, 1);
     }

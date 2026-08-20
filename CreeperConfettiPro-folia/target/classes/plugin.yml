@@ -1,8 +1,9 @@
 main: creeperconfetti.CreeperConfettiPro
 name: CreeperConfettiPro
 author: Hi_PolarBear
-version: 2.2.0-folia
-api-version: 1.21
+version: 3.1.0-folia
+api-version: 1.19
+folia-supported: true
 
 commands:
   creeperconfetti:

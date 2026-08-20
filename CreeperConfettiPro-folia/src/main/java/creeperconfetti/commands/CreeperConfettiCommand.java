@@ -2,12 +2,11 @@ package creeperconfetti.commands;
 
 import java.util.Collections;
 import java.util.List;
-import java.util.Objects;
 
 import creeperconfetti.CreeperConfettiPro;
 import creeperconfetti.LanguageManager;
+import io.papermc.paper.threadedregions.scheduler.ScheduledTask;
 import org.bukkit.Bukkit;
-import org.bukkit.FireworkEffect;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -19,8 +18,6 @@ import org.bukkit.inventory.meta.FireworkMeta;
 import org.jetbrains.annotations.NotNull;
 
 public class CreeperConfettiCommand implements TabExecutor {
-
-    private static final List<FireworkEffect> DEFAULT_CONFETTI_EFFECT = Collections.emptyList();
 
     @Override
     public boolean onCommand(CommandSender sender, @NotNull Command command, @NotNull String label, String @NotNull [] args) {
@@ -83,7 +80,7 @@ public class CreeperConfettiCommand implements TabExecutor {
     }
 
     private void handleResetEffect(CommandSender sender, LanguageManager languageManager) {
-        CreeperConfettiPro.getInstance().getConfig().set("confetti_effect", DEFAULT_CONFETTI_EFFECT);
+        CreeperConfettiPro.getInstance().getConfig().set("confetti_effect", CreeperConfettiPro.loadConfettiEffects());
         CreeperConfettiPro.getInstance().saveConfig();
         sender.sendMessage(languageManager.getMessage("command.reset_success"));
     }
@@ -118,23 +115,15 @@ public class CreeperConfettiCommand implements TabExecutor {
         Firework firework = player.getWorld().spawn(player.getLocation().add(0, 1, 0), Firework.class);
 
         FireworkMeta showcaseFireworkMeta = firework.getFireworkMeta();
-        List<FireworkEffect> effects = (List<FireworkEffect>) CreeperConfettiPro.getInstance()
-                .getConfig().get("confetti_effect");
-
-        if (effects != null && !effects.isEmpty()) {
-            showcaseFireworkMeta.addEffects(effects);
-        } else {
-            showcaseFireworkMeta.addEffects(DEFAULT_CONFETTI_EFFECT);
-        }
-
+        showcaseFireworkMeta.addEffects(CreeperConfettiPro.loadConfettiEffects());
         showcaseFireworkMeta.setPower(0);
         firework.setFireworkMeta(showcaseFireworkMeta);
 
-        Objects.requireNonNull(firework);
-        Bukkit.getScheduler().runTaskLater(
+        firework.getScheduler().runDelayed(
                 CreeperConfettiPro.getInstance(),
-                firework::detonate,
-                1L
+                (ScheduledTask task) -> firework.detonate(),
+                null,
+                1
         );
     }
 
@@ -142,7 +131,7 @@ public class CreeperConfettiCommand implements TabExecutor {
         sender.sendMessage(languageManager.getMessage("command.reloading"));
 
         languageManager.reloadLanguage(() -> {
-            Bukkit.getScheduler().runTask(CreeperConfettiPro.getInstance(), () -> {
+            Bukkit.getGlobalRegionScheduler().run(CreeperConfettiPro.getInstance(), (task) -> {
                 sender.sendMessage(languageManager.getMessage("command.language_reloaded") +
                         languageManager.getCurrentLanguageDisplayName());
             });
@@ -158,7 +147,7 @@ public class CreeperConfettiCommand implements TabExecutor {
 
         String languageCode = args[1];
         languageManager.setLanguage(languageCode, () -> {
-            Bukkit.getScheduler().runTask(CreeperConfettiPro.getInstance(), () -> {
+            Bukkit.getGlobalRegionScheduler().run(CreeperConfettiPro.getInstance(), (task) -> {
                 sender.sendMessage(languageManager.getMessage("command.language_set") +
                         languageManager.getCurrentLanguageDisplayName());
             });

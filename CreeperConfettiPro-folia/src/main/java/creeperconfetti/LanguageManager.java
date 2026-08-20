@@ -1,5 +1,6 @@
 package creeperconfetti;
 
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.YamlConfiguration;
 
@@ -106,18 +107,20 @@ public class LanguageManager {
                 return "US";
             }
         }).thenAccept(countryCode -> {
-            String detectedLang = mapCountryToLanguage(countryCode);
+            Bukkit.getGlobalRegionScheduler().run(plugin, (task) -> {
+                String detectedLang = mapCountryToLanguage(countryCode);
 
-            currentLanguage = detectedLang;
-            String languageName = getLanguageDisplayName(currentLanguage);
-            plugin.getLogger().info(CreeperConfettiPro.colorizeConsole("§7" + countryCode + " → " + languageName + " (" + currentLanguage + ")"));
+                currentLanguage = detectedLang;
+                String languageName = getLanguageDisplayName(currentLanguage);
+                plugin.getLogger().info(CreeperConfettiPro.colorizeConsole("§7" + countryCode + " → " + languageName + " (" + currentLanguage + ")"));
 
-            loadMessages();
-            initialized = true;
+                loadMessages();
+                initialized = true;
 
-            if (onInitializedCallback != null) {
-                onInitializedCallback.run();
-            }
+                if (onInitializedCallback != null) {
+                    onInitializedCallback.run();
+                }
+            });
         });
     }
 
@@ -321,7 +324,7 @@ public class LanguageManager {
         messages.put("console.enabled", "§a    CreeperConfettiPro plugin enabled successfully!");
         messages.put("console.disabled", "§c    CreeperConfettiPro plugin is unloading...");
         messages.put("console.version", "§7    Version: §f");
-        messages.put("console.author", "§7    Branch Author: §dNice_Cam_");
+        messages.put("console.author", "§7    Branch Author: §dHi_PolarBear");
         messages.put("console.java_version", "§7    Server Java Version: §f");
         messages.put("console.thanks", "§7    Thank you for using this plugin!");
         messages.put("console.bstats_enabled", "§b    ☁️ Cloud statistics feature enabled!");
@@ -339,7 +342,7 @@ public class LanguageManager {
         messages.put("console.enabled", "§a    CreeperConfettiPro 插件已成功启用！");
         messages.put("console.disabled", "§c    CreeperConfettiPro 插件正在卸载...");
         messages.put("console.version", "§7    版本: §f");
-        messages.put("console.author", "§7    分支作者: §dNice_Cam_");
+        messages.put("console.author", "§7    分支作者: §dHi_PolarBear");
         messages.put("console.java_version", "§7    服务器Java版本: §f");
         messages.put("console.thanks", "§7    感谢使用本插件！");
         messages.put("console.bstats_enabled", "§b    ☁️ 云数据统计功能已启用！");
@@ -357,7 +360,7 @@ public class LanguageManager {
         messages.put("console.enabled", "§a    CreeperConfettiPro 插件已成功啟用！");
         messages.put("console.disabled", "§c    CreeperConfettiPro 插件正在卸載...");
         messages.put("console.version", "§7    版本: §f");
-        messages.put("console.author", "§7    分支作者: §dNice_Cam_");
+        messages.put("console.author", "§7    分支作者: §dHi_PolarBear");
         messages.put("console.java_version", "§7    伺服器Java版本: §f");
         messages.put("console.thanks", "§7    感謝使用本插件！");
         messages.put("console.bstats_enabled", "§b    ☁️ 雲數據統計功能已啟用！");
@@ -375,7 +378,7 @@ public class LanguageManager {
         messages.put("console.enabled", "§a    CreeperConfettiPro プラグインが正常に有効化されました！");
         messages.put("console.disabled", "§c    CreeperConfettiPro プラグインを無効化しています...");
         messages.put("console.version", "§7    バージョン: §f");
-        messages.put("console.author", "§7    作者: §dNice_Cam_");
+        messages.put("console.author", "§7    作者: §dHi_PolarBear");
         messages.put("console.java_version", "§7    サーバーJavaバージョン: §f");
         messages.put("console.thanks", "§7    このプラグインをご利用いただきありがとうございます！");
         messages.put("console.bstats_enabled", "§b    ☁️ クラウド統計機能が有効になりました！");
@@ -393,7 +396,7 @@ public class LanguageManager {
         messages.put("console.enabled", "§a    Le plugin CreeperConfettiPro a été activé avec succès !");
         messages.put("console.disabled", "§c    Le plugin CreeperConfettiPro est en cours de désactivation...");
         messages.put("console.version", "§7    Version: §f");
-        messages.put("console.author", "§7    Auteur: §dNice_Cam_");
+        messages.put("console.author", "§7    Auteur: §dHi_PolarBear");
         messages.put("console.java_version", "§7    Version Java du serveur: §f");
         messages.put("console.thanks", "§7    Merci d'utiliser ce plugin !");
         messages.put("console.bstats_enabled", "§b    ☁️ La fonction de statistiques cloud est activée !");
@@ -411,7 +414,7 @@ public class LanguageManager {
         messages.put("console.enabled", "§a    Плагин CreeperConfettiPro успешно активирован!");
         messages.put("console.disabled", "§c    Плагин CreeperConfettiPro деактивируется...");
         messages.put("console.version", "§7    Версия: §f");
-        messages.put("console.author", "§7    Автор: §dNice_Cam_");
+        messages.put("console.author", "§7    Автор: §dHi_PolarBear");
         messages.put("console.java_version", "§7    Версия Java сервера: §f");
         messages.put("console.thanks", "§7    Спасибо за использование этого плагина!");
         messages.put("console.bstats_enabled", "§b    ☁️ Функция облачной статистики включена!");
@@ -429,7 +432,7 @@ public class LanguageManager {
         messages.put("console.enabled", "§a    CreeperConfettiPro 플러그인이 성공적으로 활성화되었습니다!");
         messages.put("console.disabled", "§c    CreeperConfettiPro 플러그인을 비활성화하는 중입니다...");
         messages.put("console.version", "§7    버전: §f");
-        messages.put("console.author", "§7    작성자: §dNice_Cam_");
+        messages.put("console.author", "§7    작성자: §dHi_PolarBear");
         messages.put("console.java_version", "§7    서버 Java 버전: §f");
         messages.put("console.thanks", "§7    이 플러그인을 사용해 주셔서 감사합니다!");
         messages.put("console.bstats_enabled", "§b    ☁️ 클라우드 통계 기능이 활성화되었습니다!");
@@ -447,7 +450,7 @@ public class LanguageManager {
         messages.put("console.enabled", "§a    ¡El plugin CreeperConfettiPro se ha habilitado correctamente!");
         messages.put("console.disabled", "§c    El plugin CreeperConfettiPro se está deshabilitando...");
         messages.put("console.version", "§7    Versión: §f");
-        messages.put("console.author", "§7    Autor: §dNice_Cam_");
+        messages.put("console.author", "§7    Autor: §dHi_PolarBear");
         messages.put("console.java_version", "§7    Versión Java del servidor: §f");
         messages.put("console.thanks", "§7    ¡Gracias por usar este plugin!");
         messages.put("console.bstats_enabled", "§b    ☁️ ¡Función de estadísticas en la nube habilitada!");
@@ -465,7 +468,7 @@ public class LanguageManager {
         messages.put("console.enabled", "§a    CreeperConfettiPro-Plugin erfolgreich aktiviert!");
         messages.put("console.disabled", "§c    CreeperConfettiPro-Plugin wird deaktiviert...");
         messages.put("console.version", "§7    Version: §f");
-        messages.put("console.author", "§7    Autor: §dNice_Cam_");
+        messages.put("console.author", "§7    Autor: §dHi_PolarBear");
         messages.put("console.java_version", "§7    Server-Java-Version: §f");
         messages.put("console.thanks", "§7    Danke, dass Sie dieses Plugin verwenden!");
         messages.put("console.bstats_enabled", "§b    ☁️ Cloud-Statistikfunktion aktiviert!");
@@ -483,7 +486,7 @@ public class LanguageManager {
         messages.put("console.enabled", "§a    Plugin CreeperConfettiPro abilitato con successo!");
         messages.put("console.disabled", "§c    Il plugin CreeperConfettiPro si sta disabilitando...");
         messages.put("console.version", "§7    Versione: §f");
-        messages.put("console.author", "§7    Autore: §dNice_Cam_");
+        messages.put("console.author", "§7    Autore: §dHi_PolarBear");
         messages.put("console.java_version", "§7    Versione Java del server: §f");
         messages.put("console.thanks", "§7    Grazie per aver utilizzato questo plugin!");
         messages.put("console.bstats_enabled", "§b    ☁️ Funzione di statistiche cloud abilitata!");
@@ -501,7 +504,7 @@ public class LanguageManager {
         messages.put("console.enabled", "§a    Plugin CreeperConfettiPro ativado com sucesso!");
         messages.put("console.disabled", "§c    O plugin CreeperConfettiPro está sendo desativado...");
         messages.put("console.version", "§7    Versão: §f");
-        messages.put("console.author", "§7    Autor: §dNice_Cam_");
+        messages.put("console.author", "§7    Autor: §dHi_PolarBear");
         messages.put("console.java_version", "§7    Versão Java do servidor: §f");
         messages.put("console.thanks", "§7    Obrigado por usar este plugin!");
         messages.put("console.bstats_enabled", "§b    ☁️ Função de estatísticas na nuvem ativada!");
@@ -519,7 +522,7 @@ public class LanguageManager {
         messages.put("console.enabled", "§a    تم تفعيل إضافة CreeperConfettiPro بنجاح!");
         messages.put("console.disabled", "§c    جاري تعطيل إضافة CreeperConfettiPro...");
         messages.put("console.version", "§7    الإصدار: §f");
-        messages.put("console.author", "§7    المؤلف: §dNice_Cam_");
+        messages.put("console.author", "§7    المؤلف: §dHi_PolarBear");
         messages.put("console.java_version", "§7    إصدار جافا للخادم: §f");
         messages.put("console.thanks", "§7    شكراً لاستخدامك هذه الإضافة!");
         messages.put("console.bstats_enabled", "§b    ☁️ تم تفعيل ميزة إحصائيات السحابة!");
@@ -537,7 +540,7 @@ public class LanguageManager {
         messages.put("console.enabled", "§a    CreeperConfettiPro प्लगइन सफलतापूर्वक सक्षम किया गया!");
         messages.put("console.disabled", "§c    CreeperConfettiPro प्लगइन अक्षम हो रहा है...");
         messages.put("console.version", "§7    संस्करण: §f");
-        messages.put("console.author", "§7    लेखक: §dNice_Cam_");
+        messages.put("console.author", "§7    लेखक: §dHi_PolarBear");
         messages.put("console.java_version", "§7    सर्वर जावा संस्करण: §f");
         messages.put("console.thanks", "§7    इस प्लगइन का उपयोग करने के लिए धन्यवाद!");
         messages.put("console.bstats_enabled", "§b    ☁️ क्लाउड सांख्यिकी सुविधा सक्षम की गई!");
@@ -555,7 +558,7 @@ public class LanguageManager {
         messages.put("console.enabled", "§a    CreeperConfettiPro eklentisi başarıyla etkinleştirildi!");
         messages.put("console.disabled", "§c    CreeperConfettiPro eklentisi devre dışı bırakılıyor...");
         messages.put("console.version", "§7    Sürüm: §f");
-        messages.put("console.author", "§7    Yazar: §dNice_Cam_");
+        messages.put("console.author", "§7    Yazar: §dHi_PolarBear");
         messages.put("console.java_version", "§7    Sunucu Java Sürümü: §f");
         messages.put("console.thanks", "§7    Bu eklentiyi kullandığınız için teşekkürler!");
         messages.put("console.bstats_enabled", "§b    ☁️ Bulut istatistikleri özelliği etkinleştirildi!");
@@ -573,7 +576,7 @@ public class LanguageManager {
         messages.put("console.enabled", "§a    CreeperConfettiPro plugin succesvol geactiveerd!");
         messages.put("console.disabled", "§c    CreeperConfettiPro plugin wordt uitgeschakeld...");
         messages.put("console.version", "§7    Versie: §f");
-        messages.put("console.author", "§7    Auteur: §dNice_Cam_");
+        messages.put("console.author", "§7    Auteur: §dHi_PolarBear");
         messages.put("console.java_version", "§7    Server Java-versie: §f");
         messages.put("console.thanks", "§7    Bedankt voor het gebruik van deze plugin!");
         messages.put("console.bstats_enabled", "§b    ☁️ Cloud-statistiekenfunctie ingeschakeld!");
@@ -591,7 +594,7 @@ public class LanguageManager {
         messages.put("console.enabled", "§a    Wtyczka CreeperConfettiPro została pomyślnie aktywowana!");
         messages.put("console.disabled", "§c    Wtyczka CreeperConfettiPro jest wyłączana...");
         messages.put("console.version", "§7    Wersja: §f");
-        messages.put("console.author", "§7    Autor: §dNice_Cam_");
+        messages.put("console.author", "§7    Autor: §dHi_PolarBear");
         messages.put("console.java_version", "§7    Wersja Javy serwera: §f");
         messages.put("console.thanks", "§7    Dziękujemy za korzystanie z tej wtyczki!");
         messages.put("console.bstats_enabled", "§b    ☁️ Funkcja statystyk chmurowych została włączona!");
@@ -609,7 +612,7 @@ public class LanguageManager {
         messages.put("console.enabled", "§a    CreeperConfettiPro-pluginen aktiverades framgångsrikt!");
         messages.put("console.disabled", "§c    CreeperConfettiPro-pluginen inaktiveras...");
         messages.put("console.version", "§7    Version: §f");
-        messages.put("console.author", "§7    Författare: §dNice_Cam_");
+        messages.put("console.author", "§7    Författare: §dHi_PolarBear");
         messages.put("console.java_version", "§7    Serverns Java-version: §f");
         messages.put("console.thanks", "§7    Tack för att du använder detta plugin!");
         messages.put("console.bstats_enabled", "§b    ☁️ Molnstatistikfunktionen är aktiverad!");
@@ -627,7 +630,7 @@ public class LanguageManager {
         messages.put("console.enabled", "§a    เปิดใช้งานปลั๊กอิน CreeperConfettiPro สำเร็จแล้ว!");
         messages.put("console.disabled", "§c    กำลังปิดใช้งานปลั๊กอิน CreeperConfettiPro...");
         messages.put("console.version", "§7    เวอร์ชัน: §f");
-        messages.put("console.author", "§7    ผู้เขียน: §dNice_Cam_");
+        messages.put("console.author", "§7    ผู้เขียน: §dHi_PolarBear");
         messages.put("console.java_version", "§7    เวอร์ชัน Java ของเซิร์ฟเวอร์: §f");
         messages.put("console.thanks", "§7    ขอบคุณที่ใช้ปลั๊กอินนี้!");
         messages.put("console.bstats_enabled", "§b    ☁️ เปิดใช้งานคุณสมบัติสถิติบนคลาวด์แล้ว!");
