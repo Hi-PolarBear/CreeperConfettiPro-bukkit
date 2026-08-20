@@ -16,7 +16,6 @@ class MetricsHelper {
         int pluginId = 29666;
         org.bstats.bukkit.Metrics metrics = new org.bstats.bukkit.Metrics(plugin, pluginId);
 
-
         metrics.addCustomChart(
                 new SimplePie("chart_id", () -> "My value")
         );

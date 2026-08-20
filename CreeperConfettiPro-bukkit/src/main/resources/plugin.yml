@@ -1,8 +1,8 @@
 main: creeperconfetti.CreeperConfettiPro
 name: CreeperConfettiPro
 author: Hi_PolarBear
-version: 2.2.0-bukkit
-api-version: 1.21
+version: 3.1.0-bukkit
+api-version: 1.13
 
 commands:
   creeperconfetti:

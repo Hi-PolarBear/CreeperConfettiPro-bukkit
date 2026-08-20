@@ -1,13 +1,12 @@
 package creeperconfetti.commands;
 
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-import java.util.Objects;
 
 import creeperconfetti.CreeperConfettiPro;
 import creeperconfetti.LanguageManager;
 import org.bukkit.Bukkit;
-import org.bukkit.FireworkEffect;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -19,8 +18,6 @@ import org.bukkit.inventory.meta.FireworkMeta;
 import org.jetbrains.annotations.NotNull;
 
 public class CreeperConfettiCommand implements TabExecutor {
-
-    private static final List<FireworkEffect> DEFAULT_CONFETTI_EFFECT = Collections.emptyList();
 
     @Override
     public boolean onCommand(CommandSender sender, @NotNull Command command, @NotNull String label, String @NotNull [] args) {
@@ -83,20 +80,22 @@ public class CreeperConfettiCommand implements TabExecutor {
     }
 
     private void handleResetEffect(CommandSender sender, LanguageManager languageManager) {
-        CreeperConfettiPro.getInstance().getConfig().set("confetti_effect", DEFAULT_CONFETTI_EFFECT);
+
+        CreeperConfettiPro.getInstance().getConfig().set("confetti_effect", CreeperConfettiPro.loadConfettiEffects());
         CreeperConfettiPro.getInstance().saveConfig();
         sender.sendMessage(languageManager.getMessage("command.reset_success"));
     }
 
     private void handleSetEffect(CommandSender sender, LanguageManager languageManager) {
-        if (!(sender instanceof Player player)) {
+        if (!(sender instanceof Player)) {
             sender.sendMessage(languageManager.getMessage("command.player_only"));
             return;
         }
 
+        Player player = (Player) sender;
         ItemStack itemInMainHand = player.getInventory().getItemInMainHand();
 
-        if (itemInMainHand.getType() != Material.FIREWORK_ROCKET) {
+        if (!isFireworkRocket(itemInMainHand)) {
             sender.sendMessage(languageManager.getMessage("command.hold_firework"));
             return;
         }
@@ -114,23 +113,26 @@ public class CreeperConfettiCommand implements TabExecutor {
         showFireworkEffect(player);
     }
 
+    private boolean isFireworkRocket(ItemStack item) {
+        if (item == null) {
+            return false;
+        }
+        Material firework = Material.matchMaterial("FIREWORK_ROCKET");
+        if (firework == null) {
+            firework = Material.matchMaterial("FIREWORK");
+        }
+        return firework != null && item.getType() == firework;
+    }
+
     private void showFireworkEffect(Player player) {
         Firework firework = player.getWorld().spawn(player.getLocation().add(0, 1, 0), Firework.class);
 
         FireworkMeta showcaseFireworkMeta = firework.getFireworkMeta();
-        List<FireworkEffect> effects = (List<FireworkEffect>) CreeperConfettiPro.getInstance()
-                .getConfig().get("confetti_effect");
 
-        if (effects != null && !effects.isEmpty()) {
-            showcaseFireworkMeta.addEffects(effects);
-        } else {
-            showcaseFireworkMeta.addEffects(DEFAULT_CONFETTI_EFFECT);
-        }
-
+        showcaseFireworkMeta.addEffects(CreeperConfettiPro.loadConfettiEffects());
         showcaseFireworkMeta.setPower(0);
         firework.setFireworkMeta(showcaseFireworkMeta);
 
-        Objects.requireNonNull(firework);
         Bukkit.getScheduler().runTaskLater(
                 CreeperConfettiPro.getInstance(),
                 firework::detonate,
@@ -173,11 +175,11 @@ public class CreeperConfettiCommand implements TabExecutor {
     @Override
     public List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, String[] args) {
         if (args.length == 1) {
-            return List.of("reload", "reseteffect", "seteffect", "reloadlanguage", "setlanguage", "language", "help");
+            return Arrays.asList("reload", "reseteffect", "seteffect", "reloadlanguage", "setlanguage", "language", "help");
         }
 
         if (args.length == 2 && args[0].equalsIgnoreCase("setlanguage")) {
-            return List.of("zh", "zht", "ja", "fr", "ru", "ko", "en", "es", "de", "it", "pt", "ar", "hi", "tr", "nl", "pl", "sv", "th");
+            return Arrays.asList("zh", "zht", "ja", "fr", "ru", "ko", "en", "es", "de", "it", "pt", "ar", "hi", "tr", "nl", "pl", "sv", "th");
         }
 
         return Collections.emptyList();

@@ -3,13 +3,19 @@ package creeperconfetti;
 import creeperconfetti.commands.CreeperConfettiCommand;
 import creeperconfetti.events.CreeperExplodeListener;
 import org.bukkit.ChatColor;
+import org.bukkit.Color;
+import org.bukkit.FireworkEffect;
+import org.bukkit.configuration.ConfigurationSection;
+import org.bukkit.configuration.MemoryConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
 public class CreeperConfettiPro extends JavaPlugin {
     private LanguageManager languageManager;
-    private boolean javaVersionChecked = false;
 
     private static final String ANSI_RESET = "\033[0m";
     private static final String ANSI_BLACK = "\033[30m";
@@ -37,27 +43,9 @@ public class CreeperConfettiPro extends JavaPlugin {
         languageManager = LanguageManager.getInstance();
         languageManager.setPlugin(this);
         languageManager.initialize(this::onLanguageInitialized);
-
-        checkJavaVersion();
-    }
-
-    private void checkJavaVersion() {
-        String javaVersion = System.getProperty("java.version");
-        if (!isJava14OrAbove(javaVersion)) {
-            getLogger().severe(colorizeConsole(languageManager.getConsoleMessage("console.java_version_low")));
-            getLogger().severe(colorizeConsole(languageManager.getConsoleMessage("console.java_current_version") + javaVersion));
-            getServer().getPluginManager().disablePlugin(this);
-            return;
-        }
-        javaVersionChecked = true;
     }
 
     private void onLanguageInitialized() {
-        if (!javaVersionChecked) {
-            checkJavaVersion();
-            if (!javaVersionChecked) return;
-        }
-
         String version = getDescription().getVersion();
         String javaVersion = System.getProperty("java.version");
         String langName = languageManager.getCurrentLanguageDisplayName();
@@ -75,8 +63,12 @@ public class CreeperConfettiPro extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new CreeperExplodeListener(), this);
         Objects.requireNonNull(getCommand("creeperconfetti")).setExecutor(new CreeperConfettiCommand());
 
-        new MetricsHelper(this);
-        getLogger().info(colorizeConsole(languageManager.getConsoleMessage("console.bstats_enabled")));
+        try {
+            new MetricsHelper(this);
+            getLogger().info(colorizeConsole(languageManager.getConsoleMessage("console.bstats_enabled")));
+        } catch (Exception e) {
+            getLogger().warning("Failed to enable bStats metrics: " + e.getMessage());
+        }
         getLogger().info(colorizeConsole(languageManager.getConsoleMessage("console.bstats_collecting")));
 
         getLogger().info(border);
@@ -109,19 +101,98 @@ public class CreeperConfettiPro extends JavaPlugin {
         return languageManager;
     }
 
-    private boolean isJava14OrAbove(String version) {
-        try {
-            String[] parts = version.split("\\.");
-            int majorVersion = Integer.parseInt(parts[0]);
-            if (majorVersion > 1) {
-                return majorVersion >= 14;
-            } else {
-                int minorVersion = Integer.parseInt(parts[1]);
-                return minorVersion >= 14;
+    private static final FireworkEffect DEFAULT_CONFETTI_EFFECT = FireworkEffect.builder()
+            .with(FireworkEffect.Type.BALL)
+            .withColor(Color.RED, Color.YELLOW, Color.WHITE)
+            .withFade(Color.ORANGE)
+            .flicker(true)
+            .build();
+
+    public static List<FireworkEffect> loadConfettiEffects() {
+        List<FireworkEffect> effects = new ArrayList<>();
+        Object raw = getInstance().getConfig().get("confetti_effect");
+        if (raw instanceof List<?>) {
+            List<?> list = (List<?>) raw;
+            for (Object entry : list) {
+                if (entry instanceof FireworkEffect) {
+                    effects.add((FireworkEffect) entry);
+                } else if (entry instanceof ConfigurationSection) {
+                    FireworkEffect effect = parseFireworkEffect((ConfigurationSection) entry);
+                    if (effect != null) {
+                        effects.add(effect);
+                    }
+                } else if (entry instanceof Map<?, ?>) {
+                    ConfigurationSection section = new MemoryConfiguration().createSection("effect", (Map<?, ?>) entry);
+                    FireworkEffect effect = parseFireworkEffect(section);
+                    if (effect != null) {
+                        effects.add(effect);
+                    }
+                }
             }
+        }
+
+        if (effects.isEmpty()) {
+            effects.add(DEFAULT_CONFETTI_EFFECT);
+        }
+        return effects;
+    }
+
+    private static FireworkEffect parseFireworkEffect(ConfigurationSection section) {
+        try {
+            FireworkEffect.Type type = FireworkEffect.Type.valueOf(section.getString("type", "BALL").toUpperCase());
+            boolean flicker = section.getBoolean("flicker", false);
+            boolean trail = section.getBoolean("trail", false);
+            List<Color> colors = parseColors(section.get("colors"));
+            if (colors.isEmpty()) {
+                return null;
+            }
+            List<Color> fadeColors = parseColors(section.get("fade-colors"));
+            return FireworkEffect.builder()
+                    .with(type)
+                    .flicker(flicker)
+                    .trail(trail)
+                    .withColor(colors)
+                    .withFade(fadeColors)
+                    .build();
         } catch (Exception e) {
-            getLogger().warning(colorizeConsole(languageManager.getConsoleMessage("console.java_parse_error") + version));
-            return false;
+            return null;
+        }
+    }
+
+    private static List<Color> parseColors(Object raw) {
+        List<Color> colors = new ArrayList<>();
+        if (raw instanceof List<?>) {
+            List<?> list = (List<?>) raw;
+            for (Object entry : list) {
+                if (entry instanceof Color) {
+                    colors.add((Color) entry);
+                } else if (entry instanceof ConfigurationSection) {
+                    Color color = parseColor((ConfigurationSection) entry);
+                    if (color != null) {
+                        colors.add(color);
+                    }
+                } else if (entry instanceof Map<?, ?>) {
+                    Color color = parseColor(new MemoryConfiguration().createSection("color", (Map<?, ?>) entry));
+                    if (color != null) {
+                        colors.add(color);
+                    }
+                }
+            }
+        }
+        return colors;
+    }
+
+    private static Color parseColor(ConfigurationSection section) {
+        try {
+            int red = section.getInt("RED", -1);
+            int green = section.getInt("GREEN", -1);
+            int blue = section.getInt("BLUE", -1);
+            if (red < 0 || red > 255 || green < 0 || green > 255 || blue < 0 || blue > 255) {
+                return null;
+            }
+            return Color.fromRGB(red, green, blue);
+        } catch (Exception e) {
+            return null;
         }
     }
 

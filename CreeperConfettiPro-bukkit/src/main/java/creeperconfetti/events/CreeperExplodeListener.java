@@ -1,14 +1,10 @@
 package creeperconfetti.events;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 import creeperconfetti.CreeperConfettiPro;
-import org.bukkit.FireworkEffect;
 import org.bukkit.Location;
 import org.bukkit.Sound;
-import org.bukkit.SoundCategory;
 import org.bukkit.entity.Creeper;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Firework;
@@ -21,11 +17,10 @@ import org.bukkit.util.Vector;
 public class CreeperExplodeListener implements Listener {
 
     private static final String CONFETTI_CHANCE_CONFIG = "confetti_chance";
-    private static final String CONFETTI_EFFECTS_CONFIG = "confetti_effect";
 
     @EventHandler
     public void onCreeperExplode(EntityExplodeEvent event) {
-        if (!event.getEntityType().equals(EntityType.CREEPER)) {
+        if (!event.getEntity().getType().equals(EntityType.CREEPER)) {
             return;
         }
 
@@ -44,20 +39,14 @@ public class CreeperExplodeListener implements Listener {
         Firework firework = creeper.getWorld().spawn(location, Firework.class);
 
         FireworkMeta fireworkMeta = firework.getFireworkMeta();
-        List<?> effects = (List<?>) CreeperConfettiPro.getInstance().getConfig().get(CONFETTI_EFFECTS_CONFIG);
-        if (effects != null && !effects.isEmpty()) {
-            List<FireworkEffect> fireworkEffects = new ArrayList<>();
-            for (Object effect : effects) {
-                if (effect instanceof FireworkEffect) {
-                    fireworkEffects.add((FireworkEffect) effect);
-                }
-            }
-            fireworkMeta.addEffects(fireworkEffects);
-        }
+
+        fireworkMeta.addEffects(CreeperConfettiPro.loadConfettiEffects());
         fireworkMeta.setPower(0);
         firework.setFireworkMeta(fireworkMeta);
 
-        location.getWorld().playSound(location, Sound.ENTITY_GENERIC_EXPLODE, SoundCategory.HOSTILE, 2.0F, 1.0F);
+        location.getWorld().playSound(location, Sound.ENTITY_GENERIC_EXPLODE, 2.0F, 1.0F);
+
+        creeper.remove();
 
         CreeperConfettiPro.getInstance().getServer().getScheduler()
                 .runTaskLater(CreeperConfettiPro.getInstance(), firework::detonate, 1L);
